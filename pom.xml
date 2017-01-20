@@ -15,6 +15,7 @@
         <javax-servlet-api.version>3.1.0</javax-servlet-api.version>
         <hibernate.version>5.2.6.Final</hibernate.version>
         <mysql-connector.version>5.1.40</mysql-connector.version>
+        <javax-faces.version>2.2.14</javax-faces.version>
     </properties>
 
     <build>
@@ -51,6 +52,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-connector.version}</version>
             <scope>compile</scope>
+        </dependency>
+        <!-- Mojarra (implementação do JSF) -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.faces</artifactId>
+            <scope>compile</scope>
+            <version>${javax-faces.version}</version>
         </dependency>
     </dependencies>
 </project>
