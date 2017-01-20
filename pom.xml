@@ -11,6 +11,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <javax-servlet-api.version>3.1.0</javax-servlet-api.version>
+        <hibernate.version>5.2.6.Final</hibernate.version>
+        <mysql-connector.version>5.1.40</mysql-connector.version>
     </properties>
 
     <build>
@@ -27,12 +31,26 @@
     </build>
 
     <dependencies>
+        <!-- Java Servlets API -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>${javax-servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Implementação de EntityManager da JPA -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Driver JDBC do MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
-
 </project>
