@@ -1,10 +1,13 @@
 package com.algaworks.financeiro.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -26,6 +29,8 @@ public class Pessoa implements Serializable {
         this.id = id;
     }
 
+    @NotEmpty
+    @Size(max = 60)
     @Column(length = 60, nullable = false)
     public String getNome() {
         return nome;

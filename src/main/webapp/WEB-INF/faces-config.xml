@@ -6,7 +6,7 @@
 
     <application>
         <message-bundle>
-            com.algaworks.resources.Messages
+            com.algaworks.financeiro.resources.Messages
         </message-bundle>
     </application>
 

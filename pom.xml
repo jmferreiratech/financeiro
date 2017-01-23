@@ -16,6 +16,7 @@
         <hibernate.version>5.2.6.Final</hibernate.version>
         <mysql-connector.version>5.1.40</mysql-connector.version>
         <javax-faces.version>2.2.14</javax-faces.version>
+        <hibernate-validator.version>5.3.4.Final</hibernate-validator.version>
     </properties>
 
     <build>
@@ -57,8 +58,15 @@
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.faces</artifactId>
-            <scope>compile</scope>
             <version>${javax-faces.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Implementacao do Bean Validation -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
