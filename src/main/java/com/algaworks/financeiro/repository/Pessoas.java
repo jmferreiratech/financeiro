@@ -2,6 +2,7 @@ package com.algaworks.financeiro.repository;
 
 import com.algaworks.financeiro.model.Pessoa;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.io.Serializable;
@@ -12,6 +13,7 @@ public class Pessoas implements Serializable {
 
     private EntityManager manager;
 
+    @Inject
     public Pessoas(EntityManager manager) {
         this.manager = manager;
     }
