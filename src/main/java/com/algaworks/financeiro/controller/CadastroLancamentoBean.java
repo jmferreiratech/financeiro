@@ -9,6 +9,7 @@ import com.algaworks.financeiro.service.NegocioException;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -60,5 +61,11 @@ public class CadastroLancamentoBean implements Serializable {
 
     public void setLancamento(Lancamento lancamento) {
         this.lancamento = lancamento;
+    }
+
+    public void dataVencimentoAlterada(AjaxBehaviorEvent event) {
+        if (this.lancamento.getDataPagamento() == null) {
+            this.lancamento.setDataPagamento(this.lancamento.getDataVencimento());
+        }
     }
 }
