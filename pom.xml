@@ -20,6 +20,7 @@
         <weld-servlet.version>2.4.1.Final</weld-servlet.version>
         <jandex.version>2.0.3.Final</jandex.version>
         <omnifaces.version>2.5.1</omnifaces.version>
+        <primefaces.version>6.0</primefaces.version>
     </properties>
 
     <build>
@@ -90,6 +91,13 @@
             <groupId>org.omnifaces</groupId>
             <artifactId>omnifaces</artifactId>
             <version>${omnifaces.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- PrimeFaces (biblioteca de componentes) -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

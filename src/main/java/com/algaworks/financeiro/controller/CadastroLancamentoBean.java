@@ -3,6 +3,7 @@ package com.algaworks.financeiro.controller;
 import com.algaworks.financeiro.model.Lancamento;
 import com.algaworks.financeiro.model.Pessoa;
 import com.algaworks.financeiro.model.TipoLancamento;
+import com.algaworks.financeiro.repository.Lancamentos;
 import com.algaworks.financeiro.repository.Pessoas;
 import com.algaworks.financeiro.service.CadastroLancamentos;
 import com.algaworks.financeiro.service.NegocioException;
@@ -25,12 +26,17 @@ public class CadastroLancamentoBean implements Serializable {
     private CadastroLancamentos cadastro;
     @Inject
     private Pessoas pessoas;
+    @Inject
+    private Lancamentos lancamentos;
 
     private Lancamento lancamento = new Lancamento();
     private List<Pessoa> todasPessoas;
 
     public void prepararCadastro() {
         this.todasPessoas = pessoas.todas();
+        if (this.lancamento == null) {
+            this.lancamento = new Lancamento();
+        }
     }
 
     public void salvar() {
@@ -67,5 +73,9 @@ public class CadastroLancamentoBean implements Serializable {
         if (this.lancamento.getDataPagamento() == null) {
             this.lancamento.setDataPagamento(this.lancamento.getDataVencimento());
         }
+    }
+
+    public List<String> pesquisarDescricoes(String descricao) {
+        return this.lancamentos.descricoesQueContem(descricao);
     }
 }

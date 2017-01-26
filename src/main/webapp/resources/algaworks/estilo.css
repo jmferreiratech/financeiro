@@ -29,3 +29,10 @@ h1 {
     margin: 0px;
     margin-bottom: 10px
 }
+.ajax-status {
+    position: fixed;
+    top: 85px;
+    right: 10px;
+    width: 35px;
+    height: 35px
+}
